@@ -1,0 +1,25 @@
+body {
+  background-color: #f5ebe0;
+  font-family: monospace;
+}
+.title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-input {
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  width: 500px;
+  font-size: 20px;
+  box-shadow: 1px 1px 1px #ccc;
+}
+.todo-input:focus {
+  outline: none;
+}
