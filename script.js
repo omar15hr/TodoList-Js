@@ -1,61 +1,46 @@
-const todos = [];
+const todoInput = document.querySelector('.project-input');
+const addButton = document.getElementById('add-button');
 const projects = [];
 
+function Projects (title, todos) {
+  this.title = title;
+  this.todos = todos;
+}
 
-function Todo(title, description, dueDate, priority, notes, checklist) {
+function Todo( title, description, dueDate, priority, notes, completed, project,
+) {
   this.title = title;
   this.description = description;
   this.dueDate = dueDate;
   this.priority = priority;
   this.notes = notes;
-  this.checklist = checklist;
+  this.completed = completed;
+  this.project = project;
 }
 
-const todo1 = new Todo(
-  "Buy milk",
-  "It's the best milk",
-  "2022-01-01",
-  "High",
-  "I like milk",
-  ["I like milk", "I like it so much"]
-);
+function addProject() {
+  const projectTitle = todoInput.value.trim();
 
-todos.push(todo1);
-showTodos();
+  if( projectTitle === '' ) return;
 
+  const project = new Projects(projectTitle, []);
+  projects.push(project);
 
-function showTodos() {
-  const todoList = document.querySelector("#todo");
-  todoList.innerHTML = "";
+  const container = document.getElementById('container');
+  const card = document.createElement('div');
+  card.className = 'projects-card';
+  card.innerHTML = `
+    <h2>${project.title}</h2>
+    <input type="text" placeholder="Add a new todo..." class="todo-input">
+  `
 
-  for (let i = 0; i < todos.length; i++) {
-    const todo = todos[i];
-    const row = document.createElement("tr");
+  container.appendChild(card);
+  todoInput.value = '';
+}
 
-    const title = document.createElement("td");
-    title.innerText = todo.title;
-    row.appendChild(title);
-
-    const description = document.createElement("td");
-    description.innerText = todo.description;
-    row.appendChild(description);
-
-    const dueDate = document.createElement("td");
-    dueDate.innerText = todo.dueDate;
-    row.appendChild(dueDate);
-
-    const priority = document.createElement("td");
-    priority.innerText = todo.priority;
-    row.appendChild(priority);
-
-    const notes = document.createElement("td");
-    notes.innerText = todo.notes;
-    row.appendChild(notes);
-
-    const checklist = document.createElement("td");
-    checklist.innerText = todo.checklist;
-    row.appendChild(checklist); 
-    
-    todoList.appendChild(row);
+addButton.addEventListener('click', addProject);
+todoInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    addProject();
   }
-}
+})

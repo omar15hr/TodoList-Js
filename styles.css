@@ -9,12 +9,12 @@ body {
 }
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 40px;
   justify-content: center;
   align-items: center;
 }
-.todo-input {
+.project-input {
   padding: 20px;
   border: none;
   border-radius: 30px;
@@ -22,16 +22,42 @@ body {
   font-size: 20px;
   box-shadow: 1px 1px 1px #ccc;
 }
+.todo-input {
+  background-color: #e3d5ca;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  width: 200px;
+  font-size: 20px;
+  box-shadow: 1px 1px 1px #ccc;
+}
+.project-input:focus {
+  outline: none;
+}
 .todo-input:focus {
   outline: none;
 }
-table {
-  margin-bottom: 30px;
-  border: 1px solid black;
+#add-button {
   padding: 20px;
-  text-align: center;
+  border: none;
+  border-radius: 40px;
+  background-color: #a98467;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
 }
-td {
+#container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  flex-flow: wrap;
+  gap: 20px;
+}
+.projects-card {
+  padding: 15px;
+  width: 500px;
+  gap: 20px;
   border: 1px solid black;
-  padding: 10px;
 }
