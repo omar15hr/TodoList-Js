@@ -26,10 +26,9 @@ body {
   background-color: #e3d5ca;
   padding: 10px;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   width: 200px;
   font-size: 20px;
-  box-shadow: 1px 1px 1px #ccc;
 }
 .project-input:focus {
   outline: none;
@@ -55,9 +54,19 @@ body {
   flex-flow: wrap;
   gap: 20px;
 }
+#add-button-todo {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #a98467;
+  font-size: 20px;
+  color: white;
+}
 .projects-card {
   padding: 15px;
   width: 500px;
   gap: 20px;
-  border: 1px solid black;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px #ccc;
 }
