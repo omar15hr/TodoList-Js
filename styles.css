@@ -9,6 +9,8 @@ body {
 }
 .container {
   display: flex;
+  flex-direction: column;
+  gap: 40px;
   justify-content: center;
   align-items: center;
 }
@@ -22,4 +24,14 @@ body {
 }
 .todo-input:focus {
   outline: none;
+}
+table {
+  margin-bottom: 30px;
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+}
+td {
+  border: 1px solid black;
+  padding: 10px;
 }

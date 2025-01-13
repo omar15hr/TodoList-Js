@@ -9,14 +9,28 @@
 <body>
   
   <h1 class="title">To Do List</h1>
-  <div class="container">
+  <form class="container" id="form">
     <input 
       type="text"
       class="todo-input"
       placeholder="Add a task..." 
       id="task"
     >
-  </div>
+    <table class="todo-display">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Fecha</th>
+          <th>Prioridad</th>
+          <th>Notas</th>
+          <th>Checklist</th>
+        </tr>
+      </thead>
+      <tbody id="todo">
+      </tbody>
+    </table>
+  </form>
 
   <script src="script.js"></script>
 </body>
